@@ -1,7 +1,7 @@
 <?php
 // include do footer
-include_once './includes/_dados.php';
-include_once './includes/_head.php';
+include_once '_dados.php';
+include_once './include/_head.php';
 include_once './includes/_header.php';
 ?>
 
