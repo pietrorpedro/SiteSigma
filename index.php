@@ -3,6 +3,7 @@
 include_once './includes/_head.php';
 include_once './includes/_header.php';
 include_once '_dados.php';
+require './includes/_banco.php';
 ?>
 
 <div class="container">
