@@ -10,14 +10,10 @@ if(isset($_POST['txtNome'])){
     $email = $_POST['txtEmail'];
     $telefone = $_POST['txtTelefone'];
     $msg = $_POST['txtMsg'];
-    $arrayO = array('nome'=>$nome, 'email'=>$email, 'telefone'=>$telefone, 'msg'=>$msg);
-    $array1[]['nome'] = $nome;
 
-    $array3 = array();
-    array_push($array3['nome'],$nome);
-    
-    print_r($arrayO);
-    //echo " Usuário: $nome <br> Email: $email <br> Telefone: $telefone <br> Mensagem: $msg";
+    $array = array();
+    array_push($array, $nome, $email, $telefone, $msg);
+    print_r($array);
 }
 
 
@@ -37,7 +33,7 @@ if(isset($_POST['txtNome'])){
     <input type="text" name="txtMsg" id="txtMsg">
 
 
-    <input type="submit" name="submit" value="Enviar">
+    <input type="submit" name="submit" value="Enviar" id="submit">
 </form>
 </div>
 
