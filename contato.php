@@ -2,7 +2,7 @@
 // include do footer
 include_once './includes/_head.php';
 include_once './includes/_header.php';
-include_once '_dados.php';
+include_once './includes/_dados.php';
 
 $a = array(1);
 if(isset($_POST['txtNome'])){
