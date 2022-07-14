@@ -6,6 +6,8 @@ include_once './includes/_dados.php';
 
 require './includes/Banco.php';
 print_r ($Banco->getAll());
+
+
 ?>
 
 <div class="container">
