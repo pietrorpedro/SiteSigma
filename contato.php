@@ -30,7 +30,7 @@ if(isset($_POST['txtNome'])){
     <label for="txtTelefone">Telefone</label>
     <input tpye="text" name="txtTelefone" id="txtTelefone">
     <label for="txtMsg">Mensagem</label>
-    <input type="text" name="txtMsg" id="txtMsg">
+    <textarea name="txtMsg" id="txtMsg"></textarea>
 
 
     <input type="submit" name="submit" value="Enviar" id="submit">

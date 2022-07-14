@@ -3,7 +3,9 @@
 include_once './includes/_head.php';
 include_once './includes/_header.php';
 include_once './includes/_dados.php';
-require './includes/_banco.php';
+
+require './includes/Banco.php';
+print_r ($Banco->getAll());
 ?>
 
 <div class="container">
@@ -11,8 +13,7 @@ require './includes/_banco.php';
     <div class="row m-3" id="cards">
         <?php
         for ($i=0; $i < 3; $i++) { 
-            # code...
-            # code...
+            
         ?>
         <div class="card" style="width: 18rem;">
         <img src="<?php echo $produtos[$i]['imagem'];?>" class="card-img-top" alt="...">
