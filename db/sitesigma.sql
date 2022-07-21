@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Jul-2022 às 16:47
+-- Tempo de geração: 21-Jul-2022 às 17:19
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -33,10 +33,6 @@ CREATE TABLE `categorias` (
   `Ativo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `categorias`
---
-
 -- --------------------------------------------------------
 
 --
@@ -52,6 +48,15 @@ CREATE TABLE `produtos` (
   `categoritaID` int(11) NOT NULL,
   `ativo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`ProdutoID`, `Nome`, `Descricao`, `imagem`, `Preco`, `categoritaID`, `ativo`) VALUES
+(1, 'Pietro Legal', 'Pietro Legal!!!!', 'http://s2.glbimg.com/lTUhRSG_HLiZm_hnV0PtPVRY1dw=/e.glbimg.com/og/ed/f/original/2016/04/05/2c.jpg', 1000, 1, 1),
+(2, 'Capivara Daora', 'Muito radical, sabia?', 'https://www.es.gov.br/Media/PortalES/Noticias/Capivarinha%20-%20Thassiane%20Targino%20-%20Ipram%20(1).jpeg', 2000, 1, 1),
+(3, 'Capivara Faxineira', 'Ele limpa tudo!', 'https://midias.correiobraziliense.com.br/_midias/jpg/2021/01/25/675x450/1_whatsapp_image_2021_01_25_at_09_58_25-6499776.jpeg', 300, 1, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -83,7 +88,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
