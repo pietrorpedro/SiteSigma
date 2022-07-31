@@ -35,3 +35,34 @@ form{
     border:1px solid rgb(193, 193, 193);
     border-radius: 10px;
 }
+/* PRODUTO DETALHE */
+
+.produto{
+    display: flex;
+    justify-content: space-between;
+    align-items:stretch;
+    flex-wrap: wrap;
+    border: 2px solid red;
+}
+.produto .produto-imagem img{
+    max-width: 500px;
+}
+.produto .produto-content{
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width:768px){
+    .produto{
+        display: block;
+        margin:0 auto;
+        text-align: center;
+    }
+    .produto div:first-child, .produto div:last-child{
+        width: 100%;
+        padding:20px;
+    }
+    .produto div:last-child button{
+        margin:0;
+    }
+}
