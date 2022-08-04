@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Jul-2022 às 17:19
+-- Tempo de geração: 04-Ago-2022 às 16:29
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `sitesigma`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adm`
+--
+
+CREATE TABLE `adm` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `Ativo` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `adm`
+--
+
+INSERT INTO `adm` (`id`, `usuario`, `senha`, `Ativo`) VALUES
+(1, 'pietro', '1234', 1);
 
 -- --------------------------------------------------------
 
@@ -43,24 +63,31 @@ CREATE TABLE `produtos` (
   `ProdutoID` int(11) NOT NULL,
   `Nome` varchar(150) NOT NULL,
   `Descricao` longtext NOT NULL,
-  `imagem` varchar(200) NOT NULL,
+  `Imagem` varchar(200) NOT NULL,
   `Preco` float NOT NULL,
-  `categoritaID` int(11) NOT NULL,
-  `ativo` tinyint(1) NOT NULL
+  `CategoriaID` int(11) NOT NULL,
+  `Ativo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`ProdutoID`, `Nome`, `Descricao`, `imagem`, `Preco`, `categoritaID`, `ativo`) VALUES
-(1, 'Pietro Legal', 'Pietro Legal!!!!', 'http://s2.glbimg.com/lTUhRSG_HLiZm_hnV0PtPVRY1dw=/e.glbimg.com/og/ed/f/original/2016/04/05/2c.jpg', 1000, 1, 1),
+INSERT INTO `produtos` (`ProdutoID`, `Nome`, `Descricao`, `Imagem`, `Preco`, `CategoriaID`, `Ativo`) VALUES
+(1, 'Pietro Legal!', 'Pietro é muito legal!', 'http://s2.glbimg.com/lTUhRSG_HLiZm_hnV0PtPVRY1dw=/e.glbimg.com/og/ed/f/original/2016/04/05/2c.jpg', 1000, 1, 1),
 (2, 'Capivara Daora', 'Muito radical, sabia?', 'https://www.es.gov.br/Media/PortalES/Noticias/Capivarinha%20-%20Thassiane%20Targino%20-%20Ipram%20(1).jpeg', 2000, 1, 1),
-(3, 'Capivara Faxineira', 'Ele limpa tudo!', 'https://midias.correiobraziliense.com.br/_midias/jpg/2021/01/25/675x450/1_whatsapp_image_2021_01_25_at_09_58_25-6499776.jpeg', 300, 1, 1);
+(3, 'Capivara Faxineira', 'Ele limpa tudo!', 'https://midias.correiobraziliense.com.br/_midias/jpg/2021/01/25/675x450/1_whatsapp_image_2021_01_25_at_09_58_25-6499776.jpeg', 300, 1, 1),
+(4, 'Jonas a capivara', 'Capivara das crias', 'https://cdn6.campograndenews.com.br/uploads/noticias/2021/08/20/ab0c1b3df5ac866e96c9f391dd89e77470273edd.jpg', 3000, 1, 1);
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `adm`
+--
+ALTER TABLE `adm`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `categorias`
@@ -79,6 +106,12 @@ ALTER TABLE `produtos`
 --
 
 --
+-- AUTO_INCREMENT de tabela `adm`
+--
+ALTER TABLE `adm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
@@ -88,7 +121,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -4,7 +4,7 @@ include_once './includes/_head.php';
 include_once './includes/_header.php';
 include_once './includes/_dados.php';
 require './includes/Banco.php'; //Conexao com o Banco
-
+//session_start();
 $sql = "SELECT * FROM produtos WHERE ativo = 1 LIMIT 3";
 $res = mysqli_query($conn, $sql);
 

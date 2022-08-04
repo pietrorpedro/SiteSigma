@@ -1,9 +1,13 @@
 <?php
 // include do footer
 include_once '../includes/_head.php';
-include_once '../includes/_header.php';
-include_once '../includes/_dados.php';
+include_once 'headeradm.php';
 require '../includes/Banco.php'; //Conexao com o Banco
+session_start();
+$logado = $_SESSION['logado'];
+if($logado != 'logado'){
+    header('Location: ./login.php');
+}
 
 $sql = "SELECT * FROM produtos WHERE Ativo = 1";
 $res = mysqli_query($conn, $sql);

@@ -1,8 +1,7 @@
 <?php
 // include do footer
 include_once '../includes/_head.php';
-include_once '../includes/_header.php';
-include_once '../includes/_dados.php';
+include_once 'headeradm.php';
 require '../includes/Banco.php'; //Conexao com o Banco
 
 $id = $_GET['id'];
@@ -25,7 +24,7 @@ $produto = mysqli_fetch_assoc($res);
         <label for="nome">CategoriaID</label>
         <input class="form-control" type="text" name="categoriaid" placeholder="CategoriaID" value="<?= $produto['CategoriaID']?>">
 
-        <input class="btn btn-primary mt-3" type="submit" name="submit" value="Criar">
+        <input class="btn btn-primary mt-3" type="submit" name="submit" value="Atualizar">
     </form>
 </div>
 

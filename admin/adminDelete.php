@@ -4,7 +4,7 @@ require '../includes/Banco.php';
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM `produtos` WHERE `produtos`.`ProdutoID` = {$id}";
+$sql = "UPDATE `produtos` SET `Ativo` = '0' WHERE `produtos`.`ProdutoID` = {$id}";
 
 if(mysqli_query($conn, $sql)){
     header('Location: admin.php');
