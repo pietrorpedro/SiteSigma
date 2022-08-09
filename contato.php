@@ -2,20 +2,22 @@
 // include do footer
 include_once './includes/_head.php';
 include_once './includes/_header.php';
-include_once './includes/_dados.php';
+require './includes/Banco.php';
 
-$a = array(1);
-if(isset($_POST['txtNome'])){
+if(isset($_POST['submit'])){
     $nome = $_POST['txtNome'];
     $email = $_POST['txtEmail'];
     $telefone = $_POST['txtTelefone'];
-    $msg = $_POST['txtMsg'];
+    $mensagem = $_POST['txtMsg'];
 
-    $array = array();
-    array_push($array, $nome, $email, $telefone, $msg);
-    print_r($array);
+    $sql = "INSERT INTO contato VALUES (NULL, '{$nome}','{$email}','{$telefone}','{$mensagem}')";
+    
+    if(mysqli_query($conn, $sql)){
+        header('Location: contato.php');
+    }else{
+        echo "Error" . $sql . "<br" . mysqli_error($conn);
+    }
 }
-
 
 ?>
 

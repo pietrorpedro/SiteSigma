@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Ago-2022 às 16:29
--- Versão do servidor: 10.4.17-MariaDB
--- versão do PHP: 7.3.27
+-- Tempo de geração: 10-Ago-2022 às 01:11
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,6 +56,28 @@ CREATE TABLE `categorias` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `contato`
+--
+
+CREATE TABLE `contato` (
+  `ContatoID` int(11) NOT NULL,
+  `Nome` varchar(100) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Telefone` varchar(15) NOT NULL,
+  `Mensagem` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `contato`
+--
+
+INSERT INTO `contato` (`ContatoID`, `Nome`, `Email`, `Telefone`, `Mensagem`) VALUES
+(1, 'Pietro', 'emailteste@gmail.com', '54050345040', 'Mensagem teste'),
+(2, 'Amanda', 'amanda@gmail.com', '51982993394', 'Amei o site!!!');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `produtos`
 --
 
@@ -96,6 +118,12 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`CategoriaID`);
 
 --
+-- Índices para tabela `contato`
+--
+ALTER TABLE `contato`
+  ADD PRIMARY KEY (`ContatoID`);
+
+--
 -- Índices para tabela `produtos`
 --
 ALTER TABLE `produtos`
@@ -116,6 +144,12 @@ ALTER TABLE `adm`
 --
 ALTER TABLE `categorias`
   MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de tabela `contato`
+--
+ALTER TABLE `contato`
+  MODIFY `ContatoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
