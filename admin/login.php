@@ -15,6 +15,6 @@ require '../includes/Banco.php'; //Conexao com o Banco
         <input type="password" class="form-control" name="password">
     </div>
 
-    <button type="submit" class="btn btn-primary[">Entrar</button>
+    <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
 </div>
