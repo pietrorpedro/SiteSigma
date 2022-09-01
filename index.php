@@ -11,7 +11,8 @@ $res = mysqli_query($conn, $sql);
 ?>
 
 <div class="container mt-5">
-    <div class="row">
+    <h2 class="text-center mb-5">Produtos mais comprados!</h2>
+    <div class="produtos">
 
         <?php foreach($res as $produto):?>
 

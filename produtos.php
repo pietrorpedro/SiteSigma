@@ -9,7 +9,8 @@ $res = mysqli_query($conn,$sql);
 ?>
 
 <div class="container mt-5">
-    <div class="row">
+    <h2 class="mb-5 text-center">Adquira a sua nova capivara hoje!</h2>
+    <div class="produtos">
         <?php foreach($res as $produto):?>
             <div class="col-sm mb-5">
             <a href="produto-detalhe.php?id=<?=$produto['ProdutoID']?>">

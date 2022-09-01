@@ -10,7 +10,7 @@ $res = mysqli_query($conn, $sql);
 $produto = mysqli_fetch_assoc($res);
 ?>
 
-<div class="container mt-2">
+<div class="container mt-5">
     <div class="produto">
         <div class="produto-img">
         <img src="<?= $produto['Imagem']?>">
